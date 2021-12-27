@@ -1,2 +1,2 @@
-# Coupa_Checkin_App
-Checkin App for POC
+# Activity Tracker
+Activity Tracker App for POC
