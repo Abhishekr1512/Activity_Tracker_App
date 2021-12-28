@@ -1,48 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activity Details</title>
-    <style>
-        .logoutLblPos{
-
-position:fixed;
-right:10px;
-top:5px;
-}
-
- * {
-            font-family: Arial;
-            margin: 2px;
-            padding: 5px;
-            position: flex;
-            table-layout: center;
-        }
-    
-        body {
-            margin-top: 2%;
-            padding: 0;
-            background-color: gainsboro;
-            font-family: Arial;
-            text-align: center;
-        }
-        table {
-            width: 100%;
-        }
-
-        th {
-            text-align: right;
-        }
-
-        td {
-            text-align: left;
-        }
-
-    </style>
-
-
+  
 <script>
     function editDetails() {
     var x = document.getElementById("editdetails");
@@ -69,85 +35,88 @@ top:5px;
     }
     }
 </script>
-
-    </head>
+</head>
 <body>
-
     <form align="right">
-        <label class="logoutLblPos">
+        <label class="signout">
         <input name="signout" type="submit" id="signout" value="Sign Out">
         </label>
     </form>
 
+<div class="container1">  
+    <div class="forms">
+        <div class="form-content">
 <div id="tasklist">
-    <table border="1">
-        <tr>
+    <div class="title">Activity List</div> <br>
+    <table border="1" class="auto">
+        <tr> 
+          <th>Sr. No.</th>
           <th>Task</th>
           <th>Sub Task</th>
-          <th>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</th>
+          <th>Description</th>
           <th>Status</th>
         </tr>
         <tr>
+         <td align="center">1 </td>
          <td>Task 1</td>
-         <td>Sub Task 1</td>
-         <td>Description</td>
+         <td>Sub Task 1Sub Task Sub Task 1Sub Task 11Sub Task 1Sub Task 1</td>
+         <td>DescriptionSub Task 1Sub Task 1Sub Task 1Sub Task 1Sub Task 1Sub Task 1</td>
          <td>Done</td>
-         <td><button type="button" onclick="editDetails()">Edit</button></td>
-         <td><button type="button" >Delete</button></td>
+         <td><i class="fas fa-edit" onclick="editDetails()"></i><button type="button"></button></td>
+         <td><i class="far fa-trash-alt"></i><button type="button" ></button></td>
         </tr>
         <tr>
+            <td align="center">2 </td>
             <td>Task 2</td>
-            <td>Sub Task 2</td>
-            <td>Description</td>
+            <td>Sub Task Sub Task 1Sub Task 1SSub Task 1Sub Task 1Sub Task 1Sub Task 1ub Task 1Sub Task 12</td>
+            <td>DescriptionSub Task 1Sub Task 1Sub Task 1Sub Task 1Sub Task 1Sub Task 1</td>
             <td>Pending</td>
-            <td><button type="button" id="edit" onclick="editDetails()">Edit</button></td>
-            <td><button type="button" id="delete">Delete</button></td>
+            <td><i class="fas fa-edit" onclick="editDetails()"></i><button type="button"></button></td>
+         <td><i class="far fa-trash-alt"></i><button type="button" ></button></td>
            </tr>
       </table>
     </div>
     <div id="editdetails" style="display:none">
-        <table>
-            <tr>
-                <th><label for=""><b>Task:</b></label></th>
-                <td><input type="task" id="task" name="task" placeholder="task" required></td>
-            </tr>
-            <tr>
-                <th><label for=""><b>Sub Task:</b></label></th>
-                <td><input type="sub task" id="sub task" name="sub task" placeholder="sub task" required></td>        
-            </tr>
-            <tr>
-                <th><label for=""><b>Desription:</b></label></th>
-                <td><input type="description" id="description" name="description" placeholder="description" required></td>               
-            </tr>
-            <tr>
-                <th><label for=""><b>Status:</b></label></th>
-                <td>
-                    <select>
+              <div class="title">Edit Activity</div>
+            <form action="#">
+                <div class="input-boxes">
+                  <div class="input-box">
+                    <input type="text" placeholder="Enter your Task" required>
+                  </div>
+                  <div class="input-box">
+                    <input type="text" placeholder="Enter your Sub Task" required>
+                  </div>
+                  <div class="input-box">
+                    <input type="text" placeholder="Enter Task Description" required>
+                  </div>
+                  <div class="input-box">
+                    <label class="input-box">Change Staus &nbsp; &nbsp; &nbsp; &nbsp;
+                        <select>
                         <option value="In Progress"> In Progress </option>
                         <option value="Pending"> Pending </option>
                         <option value="Done"> Done </option>
                     </select>
-                </td>          
-            </tr>
-            <tr>
-                <th><label for=""><b>Start time:</b></label> </th>
-                <td><input type="sub task" id="sub task" name="sub task" placeholder="sub task" required></td>        
-            </tr>
-            <tr>
-                <th><label for=""><b>End time:</b></label></th>
-                <td><input type="sub task" id="sub task" name="sub task" placeholder="sub task" required></td>
-            </tr>
-            <tr>
-                <th><label for=""><b>Total Time Taken:</b></label></th>
-                <td><input type="sub task" id="sub task" name="sub task" placeholder="sub task" required></td>
-            </tr>
-            <tr>
-                <th><label for=""><b>Date:</b></label></th>
-                <td><input type="sub task" id="sub task" name="sub task" placeholder="sub task" required></td>
-            </tr>
-    </table>
-        <button type="submit">Edit</button>
-        <button type="submit" onclick="showList()">Cancel</button>
-    </div>
+                </label>
+                  </div>
+                  <div class="input-box">
+                    <label  >Start Time</label>&nbsp;<input type="time" required>  <label>End Time</label>&nbsp;  <input type="time" required>
+                  </div>
+                  <div class="input-box">
+                    <input type="text" placeholder="Enter Total Time" required>
+                  </div>
+                  <div class="input-box">
+                    <input type="date" placeholder="Select Date" required>
+                  </div>
+                  <div class="button input-box">
+                    <input type="submit" value="Edit"> &nbsp; &nbsp;
+                    <input type="submit" value="Cancel" onclick="showList()">
+                  </div>
+                  
+                </div>
+          </form>
+        </div>
+        </div>
+</div>
+</div>
 </body>
     </html>
