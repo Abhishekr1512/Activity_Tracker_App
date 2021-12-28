@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Details</title>
+    <style>
+        .logoutLblPos{
+
+position:fixed;
+right:10px;
+top:5px;
+}
+
+ * {
+            font-family: Arial;
+            margin: 2px;
+            padding: 5px;
+            position: flex;
+            table-layout: center;
+        }
+    
+        body {
+            margin-top: 2%;
+            padding: 0;
+            background-color: gainsboro;
+            font-family: Arial;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+        }
+
+        th {
+            text-align: right;
+        }
+
+        td {
+            text-align: left;
+        }
+
+    </style>
+
+
+<script>
+    function editDetails() {
+    var x = document.getElementById("editdetails");
+    var y = document.getElementById("tasklist");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        y.style.display = "none"
+    } else {
+        x.style.display = "none";
+        y.style.display = "block"
+       
+    }
+}
+
+    function showList(){
+    var x = document.getElementById("tasklist");
+    var y = document.getElementById("editdetails");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        y.style.display = "none"
+    } else {
+        x.style.display = "none";
+        y.style.display = "block"    
+    }
+    }
+</script>
+
+    </head>
+<body>
+
+    <form align="right">
+        <label class="logoutLblPos">
+        <input name="signout" type="submit" id="signout" value="Sign Out">
+        </label>
+    </form>
+
+<div id="tasklist">
+    <table border="1">
+        <tr>
+          <th>Task</th>
+          <th>Sub Task</th>
+          <th>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+         <td>Task 1</td>
+         <td>Sub Task 1</td>
+         <td>Description</td>
+         <td>Done</td>
+         <td><button type="button" onclick="editDetails()">Edit</button></td>
+         <td><button type="button" >Delete</button></td>
+        </tr>
+        <tr>
+            <td>Task 2</td>
+            <td>Sub Task 2</td>
+            <td>Description</td>
+            <td>Pending</td>
+            <td><button type="button" id="edit" onclick="editDetails()">Edit</button></td>
+            <td><button type="button" id="delete">Delete</button></td>
+           </tr>
+      </table>
+    </div>
+    <div id="editdetails" style="display:none">
+        <table>
+            <tr>
+                <th><label for=""><b>Task:</b></label></th>
+                <td><input type="task" id="task" name="task" placeholder="task" required></td>
+            </tr>
+            <tr>
+                <th><label for=""><b>Sub Task:</b></label></th>
+                <td><input type="sub task" id="sub task" name="sub task" placeholder="sub task" required></td>        
+            </tr>
+            <tr>
+                <th><label for=""><b>Desription:</b></label></th>
+                <td><input type="description" id="description" name="description" placeholder="description" required></td>               
+            </tr>
+            <tr>
+                <th><label for=""><b>Status:</b></label></th>
+                <td>
+                    <select>
+                        <option value="In Progress"> In Progress </option>
+                        <option value="Pending"> Pending </option>
+                        <option value="Done"> Done </option>
+                    </select>
+                </td>          
+            </tr>
+            <tr>
+                <th><label for=""><b>Start time:</b></label> </th>
+                <td><input type="sub task" id="sub task" name="sub task" placeholder="sub task" required></td>        
+            </tr>
+            <tr>
+                <th><label for=""><b>End time:</b></label></th>
+                <td><input type="sub task" id="sub task" name="sub task" placeholder="sub task" required></td>
+            </tr>
+            <tr>
+                <th><label for=""><b>Total Time Taken:</b></label></th>
+                <td><input type="sub task" id="sub task" name="sub task" placeholder="sub task" required></td>
+            </tr>
+            <tr>
+                <th><label for=""><b>Date:</b></label></th>
+                <td><input type="sub task" id="sub task" name="sub task" placeholder="sub task" required></td>
+            </tr>
+    </table>
+        <button type="submit">Edit</button>
+        <button type="submit" onclick="showList()">Cancel</button>
+    </div>
+</body>
+    </html>
