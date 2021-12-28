@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+</head>
+<style>
+    * {
+            font-family: Arial;
+            margin: 2px;
+            padding: 5px;
+            position: flex;
+            table-layout: center;
+        }
+    
+        body {
+            margin-top: 2%;
+            padding: 0;
+            background-color: gainsboro;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th {
+            text-align: right;
+        }
+
+        td {
+            text-align: left;
+        }
+</style>
+<body>
+    <h1>Reset Password</h1>
+
+<form method="post" action="">
+<table>
+    <tr>
+        <th><label for="newPassword">New Password:</label></th>
+        <td><input type="password" id="newPassword" name="newPassword" title="New password" /></td>
+    </tr>
+    <tr>
+        <th><label for="confirmPassword">Confirm Password:</label></th>
+        <td><input type="password" id="confirmPassword" name="confirmPassword" title="Confirm new password" /><br></td>
+    </tr>
+</table>
+
+<p class="form-actions">
+<input type="submit" value="Change Password" title="Change password" />
+</p>
+</body>
+</html>
