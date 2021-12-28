@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 {%load static%}
-<html lang="en">
-<head>
+<html lang="en" dir="ltr">
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset Password</title>
+    <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
-</head>
-
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
 <body>
-    <h1>Reset Password</h1>
-
-<form method="post" action="">
-<table>
-    <tr>
-        <th><label for="newPassword">New Password:</label></th>
-        <td><input type="password" id="newPassword" name="newPassword" title="New password" /></td>
-    </tr>
-    <tr>
-        <th><label for="confirmPassword">Confirm Password:</label></th>
-        <td><input type="password" id="confirmPassword" name="confirmPassword" title="Confirm new password" /><br></td>
-    </tr>
-</table>
-
-<p class="form-actions">
-<input type="submit" value="Change Password" title="Change password" />
-</p>
+    <div class="container1">
+    <div class="forms">
+        <div class="form-content">
+          <div>
+            <div class="title">Reset Password</div>
+          <form action="#">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="text" placeholder="Enter New Password" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Confirm Password" required>
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Reset Password">
+              </div>
+             </div>
+        </form>
+      </div>
+      </div>
+      </div>
+    </div>
+</div>
 </body>
 </html>
