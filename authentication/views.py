@@ -12,3 +12,9 @@ def signin(request):
 
 def myorganizer(request):
     return render(request, "authentication/myorganizer.html")
+
+def activitydetails(request):
+    return render(request, "authentication/activitydetails.html")
+
+def resetpassword(request):
+    return render(request, "authentication/reset.html")
