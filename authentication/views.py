@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -16,16 +17,35 @@ import random
 def signup(request):
     if request.method == 'POST':
 
-        fname = request.POST.get('emp_fname')
-        print(fname)
+        num =random.randint(1000000,9999999)
 
-    #     serializer = EmployeeSerializer(data = request.data)
+        fname = request.POST.get('emp_fname') 
+        lname = request.POST.get('emp_lname')
+        email = request.POST.get('emp_email')
+        gender = 'M'
+        designation = request.POST.get('emp_designation')
+        password = request.POST.get('emp_password')
+        date1 = datetime.now().strftime ("%Y-%m-%d")
+
+        data = {}
+        data['emp_id'] = num
+        data['emp_fname'] = fname
+        data['emp_lname'] = lname
+        data['emp_email'] = email
+        data['emp_gender'] = gender
+        data['emp_designation'] = designation
+        data['emp_password'] = password
+        data['date'] = date1
+
+        # print(data)     
+
+        serializer = EmployeeSerializer(data = data)
         
-    #     if serializer.is_valid():
-    #         serializer.save()
-    #         return Response(serializer.data, status = status.HTTP_201_CREATED)
+        if serializer.is_valid():
+            serializer.save()
+            return render(request, "authentication/signinup.html")
         
-    #     return Response(serializer.errors , status = status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.errors , status = status.HTTP_400_BAD_REQUEST)
     return render(request, "authentication/signinup.html")
 
 @api_view(['GET','POST'])
